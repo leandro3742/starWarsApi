@@ -6,12 +6,13 @@ import '../styles/Home.css';
 import Header from '../components/header';
 import Alert from '../components/alert';
 import People from '../components/people';
+import Spinner from '../components/spinner';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import { tryGetPeople } from '../redux/actions/listPeople';
 import { openAlert } from '../redux/actions/alert';
 import { saveIndex } from '../redux/actions/deletePerson';
-import { existFav, possibleFav, removeFavourite } from '../redux/actions/favourite';
+import { existFav, possibleFav } from '../redux/actions/favourite';
 import { loadProfile, sendProfile } from '../redux/actions/profile';
 var _ = require('lodash');
 
@@ -20,8 +21,17 @@ const Home = () => {
     const dispatch = useDispatch();
   
     const [showAlert, setShowAlert] = useState("d-none");
+    const [showSpinner, setShowSpinner] = useState("d-none");
     const [array, setArray] = useState();
-  
+
+    useEffect(() => {
+      if(state.loading){
+        setShowSpinner("d-flex")
+      }
+      else
+        setShowSpinner("d-none")
+    }, [state.loading])
+    
     useEffect(() => {
       if(state.result === undefined)
         dispatch(tryGetPeople())
@@ -65,6 +75,9 @@ const Home = () => {
       <React.Fragment>
         <div style={{position: "absolute", zIndex: "1", width: "100%", height: "100%"}} className={"justify-content-center align-items-center " + showAlert} >
           <Alert />
+        </div>
+        <div style={{position: "absolute", zIndex: "2", width: "100%", height: "100%"}} className={"justify-content-center align-items-center " + showSpinner} >
+          <Spinner />
         </div>
         <div className="m-0">
             <Header />

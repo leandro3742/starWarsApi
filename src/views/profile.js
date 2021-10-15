@@ -67,7 +67,7 @@ const Profile = () => {
             let newPerson = state.profile;
             let oldPerson = data;
             console.log(oldPerson)
-            let input = document.querySelectorAll("input");
+            let input = document.querySelectorAll(".input");
             if(name != "")
                 newPerson.name = name
             if(films != "")
@@ -85,8 +85,9 @@ const Profile = () => {
         }
         else{
             setShowBorder("1px solid white")
-            let input = document.querySelectorAll("input");
+            let input = document.querySelectorAll(".input");
             _.map(input, value => {
+                console.log(value)
                 value.removeAttribute("readOnly")
             })
             setEditMode(true)
