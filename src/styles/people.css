@@ -1,0 +1,7 @@
+.buttonDelete{
+    color: grey;
+}
+
+.buttonDelete:hover{
+  color: white;
+}

@@ -1,0 +1,35 @@
+.App {
+  text-align: start;
+  text-decoration: underline grey;
+}
+a{
+  color: transparent;
+  text-decoration: none;
+}
+
+#title{
+  text-align: start;
+}
+span{
+  color: grey;
+}
+#name{
+  color: white;
+}
+.button{
+  color: white;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.btn{
+  border-radius: 25px;
+}
+@media (max-width: 700px) {
+  #title{
+    text-align: center;
+  }
+}

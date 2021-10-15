@@ -1,0 +1,67 @@
+.input::placeholder{
+    color: white;
+}
+.inputNoChange::placeholder{
+    color: white;
+}
+.input{
+    background-color: transparent;
+    width: 150px;
+    border: none;
+    outline: none;
+    text-align: start;
+    color: white;
+}
+.btnEdit{
+    width: 150px;
+    position: relative;
+}
+.inputNoChange{
+    background-color: transparent;
+    width: 150px;
+    border: none;
+    outline: none;
+    text-align: start;
+    color: white;
+}
+
+#inputTitle{
+    font-size: 32px;
+    width: 250px;
+}
+
+.text{
+    font-size: 21px;
+}
+
+.divContainerData{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    align-items: start;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    /* .divContainerData{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        text-align: center;
+    } */
+    .input{
+        font-size: 15px;
+    }
+    .text{
+        font-size: 15px;
+    }
+    #inputTitle{
+      font-size: 21px;
+      width: 200px;
+    }
+}
+  
